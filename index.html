@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sefa Akgun — Game Developer</title>
-<meta name="description" content="Game Developer with published titles on Steam. Unity & C# specialist, multiplayer networking, AI integration.">
+<meta name="description" content="Game Developer with published titles on Steam and playable mobile projects. Unity & C# specialist: mobile performance, multiplayer networking, systems architecture.">
 <style>
 /* ── Reset & Base ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -250,6 +250,7 @@ nav {
   transition: gap 0.2s;
 }
 .game-link:hover { gap: 0.7rem; }
+.game-links { display: flex; flex-wrap: wrap; gap: 1.4rem; }
 .game-link::after { content: '\2192'; }
 
 /* ── Project Cards ── */
@@ -422,6 +423,7 @@ footer {
     <div class="nav-logo">sefa<span>.</span>dev</div>
     <ul class="nav-links">
       <li><a href="#games">Games</a></li>
+      <li><a href="#mobile">Mobile</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -438,7 +440,7 @@ footer {
     <div class="hero-badge">Available for work — Immediately</div>
     <h1>Hi, I'm <span class="accent">Sefa Akgun</span></h1>
     <p class="hero-sub">
-      Game Developer with two published titles on Steam. I build games from concept to release with Unity & C#, specializing in multiplayer networking and systems architecture — currently building <span class="accent">Border Checkpoint</span>, a co-op multiplayer game.
+      Game Developer with two published titles on Steam. I build games from concept to release with Unity & C#, from mobile puzzle games to multiplayer systems — currently building <span class="accent">Border Checkpoint</span>, a co-op multiplayer game.
     </p>
     <div class="hero-btns">
       <a href="#games" class="btn btn-primary">See My Games</a>
@@ -488,6 +490,89 @@ footer {
           <span class="game-tag">Leaderboards</span>
         </div>
         <a href="https://store.steampowered.com/app/3600150/CoApe__Rise_Of_The_Monke/" target="_blank" class="game-link">View on Steam</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mobile Projects -->
+<section class="section" id="mobile">
+  <div class="fade-in">
+    <div class="section-label">Mobile Projects</div>
+    <div class="section-title">Playable in Your Browser</div>
+    <p class="section-desc">Three portrait mobile games built with Unity 6, each focused on a different problem: puzzle rules and level generation, large-scale simulation performance, and casual game feel. Open source, with architecture and performance notes in each repository.</p>
+  </div>
+
+  <div class="game-grid">
+    <div class="game-card fade-in">
+      <img class="game-img" src="img/parksort.jpg" alt="ParkSort screenshots">
+      <div class="game-body">
+        <h3>ParkSort</h3>
+        <div class="game-studio">Colour-Sorting Parking Puzzle</div>
+        <p>Tap cars out of a jammed lot and into the garage of their colour before the waiting bay fills up. The rules live in a pure C# core with a bitmask solver; all 60 levels are generated backwards from a solved state, verified by the solver and graded by the win rates of two bots. Includes tunnels, undo, hint and extra-slot boosters, a coin shop with themes, and a guided first level.</p>
+        <div class="game-tags">
+          <span class="game-tag">Unity 6</span>
+          <span class="game-tag">C#</span>
+          <span class="game-tag">Level Generation</span>
+          <span class="game-tag">Solver</span>
+          <span class="game-tag">Unit Tests</span>
+          <span class="game-tag">DOTween</span>
+          <span class="game-tag">Android</span>
+          <span class="game-tag">WebGL</span>
+        </div>
+        <div class="game-links">
+          <a href="play/parksort/" target="_blank" class="game-link">Play in Browser</a>
+          <a href="https://github.com/Zeafkee/ParkSort/releases/latest" target="_blank" class="game-link">Android APK</a>
+          <a href="https://github.com/Zeafkee/ParkSort" target="_blank" class="game-link">Source Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-card fade-in">
+      <img class="game-img" src="img/crystaloutpost.jpg" alt="CrystalOutpost screenshots">
+      <div class="game-body">
+        <h3>CrystalOutpost</h3>
+        <div class="game-studio">Arcade Horde Defense</div>
+        <p>Hold an energy core against hundreds of creatures: steer the hero with one thumb, collect crystals and spend them on turrets, cannons, walls and upgrades. The horde is a data-oriented simulation — NativeArrays updated by Burst-compiled jobs, a shared flow field, a uniform spatial grid — drawn with GPU instancing and vertex-shader animation, with zero managed allocations per simulation tick.</p>
+        <div class="game-tags">
+          <span class="game-tag">Unity 6</span>
+          <span class="game-tag">C#</span>
+          <span class="game-tag">Jobs + Burst</span>
+          <span class="game-tag">GPU Instancing</span>
+          <span class="game-tag">Shaders</span>
+          <span class="game-tag">Flow Field</span>
+          <span class="game-tag">Android</span>
+          <span class="game-tag">WebGL</span>
+        </div>
+        <div class="game-links">
+          <a href="play/crystaloutpost/" target="_blank" class="game-link">Play in Browser</a>
+          <a href="https://github.com/Zeafkee/CrystalOutpost/releases/latest" target="_blank" class="game-link">Android APK</a>
+          <a href="https://github.com/Zeafkee/CrystalOutpost" target="_blank" class="game-link">Source Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-card fade-in">
+      <img class="game-img" src="img/blastpuzzle.jpg" alt="BlastPuzzle screenshots">
+      <div class="game-body">
+        <h3>BlastPuzzle</h3>
+        <div class="game-studio">Collapse / Blast Puzzle</div>
+        <p>Tap groups of matching blocks, build rockets, bombs and disco balls, and break boxes within the move limit across 20 levels. Game rules are engine-independent C# covered by unit tests, with deadlock detection and a deterministic single-pass shuffle. Pooled tiles, sprite atlases, safe-area aware portrait UI and level balance checked by a simulated player.</p>
+        <div class="game-tags">
+          <span class="game-tag">Unity 6</span>
+          <span class="game-tag">C#</span>
+          <span class="game-tag">Unit Tests</span>
+          <span class="game-tag">Object Pooling</span>
+          <span class="game-tag">DOTween</span>
+          <span class="game-tag">ScriptableObjects</span>
+          <span class="game-tag">Android</span>
+          <span class="game-tag">WebGL</span>
+        </div>
+        <div class="game-links">
+          <a href="play/blastpuzzle/" target="_blank" class="game-link">Play in Browser</a>
+          <a href="https://github.com/Zeafkee/BlastPuzzle/releases/latest" target="_blank" class="game-link">Android APK</a>
+          <a href="https://github.com/Zeafkee/BlastPuzzle" target="_blank" class="game-link">Source Code</a>
+        </div>
       </div>
     </div>
   </div>
@@ -616,6 +701,11 @@ footer {
         <span class="skill-item">FSM</span>
         <span class="skill-item">DOTween</span>
         <span class="skill-item">Object Pooling</span>
+        <span class="skill-item">Mobile (Android)</span>
+        <span class="skill-item">Jobs &amp; Burst</span>
+        <span class="skill-item">URP Shaders</span>
+        <span class="skill-item">Unit Testing</span>
+        <span class="skill-item">Profiling</span>
       </div>
     </div>
 
